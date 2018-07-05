@@ -1,9 +1,11 @@
 ENV["SINATRA_ENV"] = "test"
 
 require_relative '../config/environment'
-require 'rack/test'
+require "factory_bot"
 
-if ActiveRecord::Base.connection.migration_context.needs_migration?
+# Should `ActiveRecord::Migrator.needs_migration?` throw an error, replace with:
+# ActiveRecord::Base.connection.migration_context.needs_migration?
+if ActiveRecord::Migrator.needs_migration?
   raise 'Migrations are pending. Run `rake db:migrate SINATRA_ENV=test` to resolve the issue.'
 end
 
@@ -14,6 +16,12 @@ RSpec.configure do |config|
 
   config.mock_with :rspec do |mocks|
     mocks.verify_partial_doubles = true
+  end
+
+  config.include FactoryBot::Syntax::Methods
+
+  config.before(:suite) do
+    FactoryBot.find_definitions
   end
 
   DatabaseCleaner.strategy = :truncation
