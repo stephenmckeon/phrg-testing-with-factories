@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 5) do
 
   create_table "tigers", force: :cascade do |t|
     t.integer "zoo_id"
-    t.integer "number_of_spots"
+    t.integer "number_of_stripes"
     t.integer "weight"
   end
 
