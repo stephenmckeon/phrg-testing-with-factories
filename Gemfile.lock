@@ -64,7 +64,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord (= 5.1.4)
-  database_cleaner
+  database_cleaner (= 1.7.0)
   factory_bot (= 4.10.0)
   pry
   rake

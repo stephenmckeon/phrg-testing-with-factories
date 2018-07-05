@@ -10,12 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2) do
+ActiveRecord::Schema.define(version: 5) do
 
   create_table "bears", force: :cascade do |t|
     t.integer "weight"
     t.integer "zoo_id"
     t.string "color"
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string "city"
+    t.string "state"
+    t.decimal "lat"
+    t.decimal "long"
+  end
+
+  create_table "storks", force: :cascade do |t|
+    t.integer "zoo_id"
+    t.integer "bill_length"
+    t.integer "wing_span"
+    t.string "color"
+  end
+
+  create_table "tigers", force: :cascade do |t|
+    t.integer "zoo_id"
+    t.integer "number_of_spots"
+    t.integer "weight"
   end
 
   create_table "zoos", force: :cascade do |t|
