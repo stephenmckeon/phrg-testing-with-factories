@@ -170,6 +170,10 @@ The DSL for `factory_bot` is robust. To learn more techniques, such as using tra
 
 ## Lab
 
+### It's a Zoo!
+
+In this lab, you will build factories for various objects. Look at the validations in each model closely to find valid values for each required attribute.
+
 ## Resources
 
 - [FactoryBot on Github](https://github.com/thoughtbot/factory_bot)
